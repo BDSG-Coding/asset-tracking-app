@@ -23,8 +23,16 @@ const AssetCard = props => (
           <li>
             <strong>Rack Id:</strong> {props.rackId}
           </li>
+          <span onClick={()=> props.deleteAsset} >
+          X
+      </span>
           </ul>
       </div>
+    
+      {/* <span onClick={()=> props.deleteAsset(props.id)} >
+          X
+      </span> */}
+    
   </div>
 );
  

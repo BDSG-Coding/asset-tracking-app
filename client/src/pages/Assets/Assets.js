@@ -4,9 +4,11 @@ import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
-import AssetCard from "../../components/AssetCard/AssetCard";
-import Api from "../../Api/Api"
+import AssetCard from "../../components/AssetCard";
+import Footer from "../../components/Footer/Footer";
+import Map from "../../MapApi/Map";
 class Assets extends Component {
+
   // Setting our component's initial state
   state = {
     assets: [],
@@ -117,8 +119,8 @@ class Assets extends Component {
             </form>
           </Col>
           <Col size="md-6 sm-12"> 
-              {/* <AssetCard/> */}
-           {this.state.assets.length ? (
+            <Map/>
+           {/* {this.state.assets.length ? (
 
                 this.state.assets.map(asset => {
                   return (
@@ -131,15 +133,17 @@ class Assets extends Component {
                       rackId = {asset.rackId}
                       >
                        <DeleteBtn onClick={() => this.deleteAsset(asset._id)} />
-                    </AssetCard>
+                    </AssetCard> */}
                    
-                  );
+                  {/* );
                 })
             ) : (
               <h3>No Results to Display</h3> 
-            )}
-          </Col>
+            )} */}
+          </Col> 
+        <Footer/>
         </Row>
+       
       </Container>
     );
   }
