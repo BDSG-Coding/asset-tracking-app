@@ -7,6 +7,8 @@ const assetSchema = new Schema({
   assetTag: { type: String, required: true },
   IPaddress: { type: String, required: true },
   rackId: { type: String, required: true },
+  latitude: { type:String, required:true},
+  longitude:{type:String, required:true},
   date: { type: Date, default: Date.now }
 });
 

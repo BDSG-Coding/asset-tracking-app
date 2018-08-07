@@ -5,8 +5,10 @@ import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
 import AssetCard from "../../components/AssetCard";
-import Footer from "../../components/Footer/Footer";
+//import Footer from "../../components/Footer/Footer";
 import Map from "../../MapApi/Map";
+
+
 class Assets extends Component {
 
   // Setting our component's initial state
@@ -16,8 +18,9 @@ class Assets extends Component {
     serialNumber: "",
     assetTag : "",
     IPaddress : "",
-    rackId : ""
-  
+    rackId : "",
+    latitude:"",
+    longitude:""
   };
 
   // When the component mounts, load all assets and save them to this.state.assets
@@ -29,7 +32,7 @@ class Assets extends Component {
   loadAssets = () => {
     API.getAssets()
       .then(res =>
-        this.setState({ assets: res.data, modelNumber: "", serialNumber: "", assetTag: "", IPaddress:"", rackId:""})
+        this.setState({ assets: res.data, modelNumber: "", serialNumber: "", assetTag: "", IPaddress:"", rackId:"",latitude:"",longitude:""})
       )
       .catch(err => console.log(err));
   };
@@ -59,7 +62,9 @@ class Assets extends Component {
         serialNumber: this.state.serialNumber,
         assetTag: this.state.assetTag,
         IPaddress: this.state.IPaddress,
-        rackId: this.state.rackId
+        rackId: this.state.rackId,
+        latitude: this.state.latitude,
+        longitude: this.state.longitude
       })
         .then(res => this.loadAssets())
         .catch(err => console.log(err));
@@ -109,6 +114,20 @@ class Assets extends Component {
                 name="rackId"
                 placeholder="rackId (required)"
               />
+              <label><strong> Latitude </strong>  </label>
+               <Input
+                value={this.state.latitude}
+                onChange={this.handleInputChange}
+                name="latitude"
+                placeholder="latitude (required)"
+              />
+              <label><strong> longitude</strong>  </label>
+               <Input
+                value={this.state.longitude}
+                onChange={this.handleInputChange}
+                name="longitude"
+                placeholder="longitude (required)"
+              />
             
               <FormBtn
                 disabled={!(this.state.serialNumber && this.state.modelNumber)}
@@ -120,28 +139,28 @@ class Assets extends Component {
           </Col>
           <Col size="md-6 sm-12"> 
             <Map/>
-           {/* {this.state.assets.length ? (
-
+            {this.state.assets.length ? (
                 this.state.assets.map(asset => {
                   return (
                 
-                    <AssetCard
+                    <AssetCard key = {asset._id}
                       modelNumber={asset.modelNumber}
                       serialNumber={asset.serialNumber}
                       IPaddress ={asset.IPaddress}
                       assetTag = {asset.assetTag}
                       rackId = {asset.rackId}
+                      latitude = {asset.latitude}
+                      longitude ={asset.longitude}
                       >
-                       <DeleteBtn onClick={() => this.deleteAsset(asset._id)} />
-                    </AssetCard> */}
-                   
-                  {/* );
+                      <DeleteBtn onClick={() => this.deleteAsset(asset._id)} />
+                    </AssetCard>
+              );
                 })
             ) : (
               <h3>No Results to Display</h3> 
-            )} */}
+            )} 
           </Col> 
-        <Footer/>
+        {/* <Footer/> */}
         </Row>
        
       </Container>

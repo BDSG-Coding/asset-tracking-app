@@ -17,6 +17,8 @@ const assetSeed = [
     assetTag: "kljasd",
     IPaddress : "kll:jn:jnjk",
     rackId: 12,
+    latitude:37.7880,
+    longitude: -122.4075,
     date: new Date(Date.now())
   },
   {
@@ -27,6 +29,8 @@ const assetSeed = [
     assetTag: "kljasd",
     IPaddress : "kll:jn:jnjk",
     rackId: 12,
+    latitude:37.7880,
+    longitude: -122.4075,
     date: new Date(Date.now())
   },
   {
@@ -37,6 +41,8 @@ const assetSeed = [
     assetTag: "kljasd",
     IPaddress : "kll:jn:jnjk",
     rackId: 12,
+    latitude:37.7880,
+    longitude: -122.4075,
     date: new Date(Date.now())
   },
   {
@@ -47,6 +53,8 @@ const assetSeed = [
     assetTag: "kljasd",
     IPaddress : "kll:jn:jnjk",
     rackId: 12,
+    latitude:37.7880,
+    longitude: -122.4075,
     date: new Date(Date.now())
   },
   {
@@ -57,6 +65,8 @@ const assetSeed = [
     assetTag: "kljasd",
     IPaddress : "kll:jn:jnjk",
     rackId: 12,
+    latitude:37.7880,
+    longitude: -122.4075,
     date: new Date(Date.now())
   },
   {
@@ -67,6 +77,8 @@ const assetSeed = [
     assetTag: "kljasd",
     IPaddress : "kll:jn:jnjk",
     rackId: 12,
+    latitude:37.7880,
+    longitude: -122.4075,
     date: new Date(Date.now())
   },
   {
@@ -77,6 +89,8 @@ const assetSeed = [
     assetTag: "kljasd",
     IPaddress : "kll:jn:jnjk",
     rackId: 12,
+    latitude:37.7880,
+    longitude: -122.4075,
     date: new Date(Date.now())
   },
   {
@@ -87,6 +101,8 @@ const assetSeed = [
     assetTag: "kljasd",
     IPaddress : "kll:jn:jnjk",
     rackId: 12,
+    latitude:37.7880,
+    longitude: -122.4075,
     date: new Date(Date.now())
   },
   {
@@ -97,6 +113,8 @@ const assetSeed = [
     assetTag: "kljasd",
     IPaddress : "kll:jn:jnjk",
     rackId: 12,
+    latitude:37.7880,
+    longitude: -122.4075,
     date: new Date(Date.now())
   },
   {
@@ -107,6 +125,8 @@ const assetSeed = [
     assetTag: "kljasd",
     IPaddress : "kll:jn:jnjk",
     rackId: 12,
+    latitude:37.7880,
+    longitude: -122.4075,
     date: new Date(Date.now())
   },
   {
@@ -117,6 +137,8 @@ const assetSeed = [
     assetTag: "kljasd",
     IPaddress : "kll:jn:jnjk",
     rackId: 12,
+    latitude:37.7880,
+    longitude: -122.4075,
     date: new Date(Date.now())
   },
   {
@@ -127,6 +149,8 @@ const assetSeed = [
     assetTag: "kljasd",
     IPaddress : "kll:jn:jnjk",
     rackId: 12,
+    latitude:37.7880,
+    longitude: -122.4075,
     date: new Date(Date.now())
   },
   {
@@ -137,6 +161,8 @@ const assetSeed = [
     assetTag: "kljasd",
     IPaddress : "kll:jn:jnjk",
     rackId: 12,
+    latitude:37.7880,
+    longitude: -122.4075,
     date: new Date(Date.now())
   },
   {
@@ -147,6 +173,8 @@ const assetSeed = [
     assetTag: "kljasd",
     IPaddress : "kll:jn:jnjk",
     rackId: 12,
+    latitude:37.7880,
+    longitude: -122.4075,
     date: new Date(Date.now())
   },
   {
@@ -157,6 +185,8 @@ const assetSeed = [
     assetTag: "kljasd",
     IPaddress : "kll:jn:jnjk",
     rackId: 12,
+    latitude:37.7880,
+    longitude: -122.4075,
     date: new Date(Date.now())
   },
   {
@@ -167,6 +197,8 @@ const assetSeed = [
     assetTag: "kljasd",
     IPaddress : "kll:jn:jnjk",
     rackId: 12,
+    latitude:37.7880,
+    longitude: -122.4075,
     date: new Date(Date.now())
   }
 ];

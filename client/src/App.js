@@ -4,7 +4,6 @@ import Assets from "./pages/Assets";
 
 const App = () => (
   <div>
-    
     <Assets />
   </div>
 );

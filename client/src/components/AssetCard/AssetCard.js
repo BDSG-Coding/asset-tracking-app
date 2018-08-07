@@ -1,5 +1,6 @@
 import React from 'react';
 import './AssetCard.css';
+import '../../pages/Assets';
 
 const AssetCard = props => (
   <div className="card">  
@@ -23,9 +24,15 @@ const AssetCard = props => (
           <li>
             <strong>Rack Id:</strong> {props.rackId}
           </li>
-          <span onClick={()=> props.deleteAsset} >
+          <li>
+            <strong>Latitude:</strong> {props.latitude}
+          </li>
+          <li>
+            <strong>longitude:</strong> {props.longitude}
+          </li>
+          {/* <span onClick={()=> props.deleteAsset} >
           X
-      </span>
+      </span> */}
           </ul>
       </div>
     

@@ -1,38 +1,54 @@
-import React, {Component} from 'react';
-import GoogleMapReact from 'google-map-react';
- 
-const ReactComponent = ({ text }) => <div>{text}</div>;
+import React from "react"
+import { compose, withProps } from "recompose"
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
-class Map extends Component {
-  static defaultProps = {
-    center: {
-      lat: 37.8716,
-      lng: -122.2727
-    },
-    zoom: 11
-  };
- 
+const MyMapComponent = compose(
+  withProps({
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?key= API KEY",
+    loadingElement: <div style={{ height: `100%` }} />,
+    containerElement: <div style={{ height: `400px` }} />,
+    mapElement: <div style={{ height: `100%` }} />,
+  }),
+  withScriptjs,
+  withGoogleMap
+)((props) =>
+  <GoogleMap
+    defaultZoom={8}
+    defaultCenter={{ lat: 37.8716, lng: -122.2727 }}
+  >
+    {props.isMarkerShown && <Marker position={{ lat: 37.8716, lng: -122.2727 }} onClick={props.onMarkerClick} />}
+    {props.isMarkerShown && <Marker position={{ lat: 37.8044, lng: -122.2711 }} onClick={props.onMarkerClick} />}
+    {props.isMarkerShown && <Marker position={{ lat: 37.7749, lng: -122.4194 }} onClick={props.onMarkerClick} />}
+  </GoogleMap>
+)
+
+export default class MyFancyComponent extends React.PureComponent {
+  state = {
+    isMarkerShown: false,
+  }
+
+
+  componentDidMount() {
+    this.delayedShowMarker()
+  }
+
+  delayedShowMarker = () => {
+    setTimeout(() => {
+      this.setState({ isMarkerShown: true })
+    }, 3000)
+  }
+
+  handleMarkerClick = () => {
+    this.setState({ isMarkerShown: false })
+    this.delayedShowMarker()
+  }
+
   render() {
     return (
-      // Important! Always set the container height explicitly
-      <div style={{ height: '100vh', width: '100%' }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: ""}}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-          onChildMouseEnter={this.onChildMouseEnter}
-          onChildMouseLeave={this.onChildMouseLeave}
-     
-        >
-          <ReactComponent
-            lat={37.8716}
-            lng={-122.2727}
-            text={'Berkeley, California'}
-          />
-        </GoogleMapReact>
-      </div>
-    );
+      <MyMapComponent
+        isMarkerShown={this.state.isMarkerShown}
+        onMarkerClick={this.handleMarkerClick}
+      />
+    )
   }
 }
- 
-export default Map;
