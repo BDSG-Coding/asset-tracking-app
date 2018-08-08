@@ -4,7 +4,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 
 const MyMapComponent = compose(
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?key= API KEY",
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCyc6pOk2K_WAqYhN3DoeOir-R36LgcQ0w",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
@@ -35,7 +35,7 @@ export default class MyFancyComponent extends React.PureComponent {
   delayedShowMarker = () => {
     setTimeout(() => {
       this.setState({ isMarkerShown: true })
-    }, 3000)
+    }, 1000)
   }
 
   handleMarkerClick = () => {

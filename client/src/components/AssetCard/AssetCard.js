@@ -4,10 +4,10 @@ import '../../pages/Assets';
 
 const AssetCard = props => (
   <div className="card">  
-      <div className= "img-container">
+      <div className="img-container">
           <img alt={props.modelNumber} src={props.image} />
       </div>
-      <div className = "content">
+      <div className="content">
           <ul>
           <li>
             <strong>Model Number:</strong> {props.modelNumber}
@@ -34,6 +34,7 @@ const AssetCard = props => (
           X
       </span> */}
           </ul>
+          {props.children}
       </div>
     
       {/* <span onClick={()=> props.deleteAsset(props.id)} >

@@ -162,7 +162,6 @@ class Assets extends Component {
           </Col> 
         {/* <Footer/> */}
         </Row>
-       
       </Container>
     );
   }
