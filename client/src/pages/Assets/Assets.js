@@ -22,7 +22,6 @@ class Assets extends Component {
     latitude:"",
     longitude:""
   };
-
   // When the component mounts, load all assets and save them to this.state.assets
   componentDidMount() {
     this.loadAssets();
@@ -138,7 +137,9 @@ class Assets extends Component {
             </form>
           </Col>
           <Col size="md-6 sm-12"> 
-            <Map/>
+            <Map
+                latitude={this.state.latitude}
+                longitude={this.state.longitude}/>
             {this.state.assets.length ? (
                 this.state.assets.map(asset => {
                   return (
@@ -152,7 +153,9 @@ class Assets extends Component {
                       latitude = {asset.latitude}
                       longitude ={asset.longitude}
                       >
+
                       <DeleteBtn onClick={() => this.deleteAsset(asset._id)} />
+                    
                     </AssetCard>
               );
                 })
